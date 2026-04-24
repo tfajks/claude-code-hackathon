@@ -1,0 +1,22 @@
+{
+  "frozen_accounts": [
+    {
+      "user_id": "frozen_usr_001",
+      "email": "j.terminated@company.com",
+      "reason": "employment_terminated",
+      "frozen_at": "2026-03-15T09:00:00Z"
+    },
+    {
+      "user_id": "frozen_usr_002",
+      "email": "s.suspended@company.com",
+      "reason": "security_investigation",
+      "frozen_at": "2026-04-10T14:30:00Z"
+    },
+    {
+      "user_id": "frozen_usr_003",
+      "email": "r.resigned@company.com",
+      "reason": "voluntary_resignation",
+      "frozen_at": "2026-04-01T17:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+[
+  {
+    "id": "NRM-001",
+    "user_id": "emp_10001",
+    "input": "My laptop will not turn on at all. I plugged it in last night and this morning it is completely dead — no lights, no response.",
+    "expected_priority": "P2",
+    "expected_category": "hardware",
+    "expected_team": "desktop",
+    "expected_action": "route",
+    "expected_escalate": false
+  },
+  {
+    "id": "NRM-002",
+    "user_id": "emp_10001",
+    "input": "I forgot my Windows password and cannot log in. I have an important meeting in 2 hours.",
+    "expected_priority": "P3",
+    "expected_category": "password_reset",
+    "expected_team": "iam",
+    "expected_action": "auto_resolve",
+    "expected_escalate": false
+  },
+  {
+    "id": "NRM-003",
+    "user_id": "emp_10002",
+    "input": "VPN stopped working after I updated my laptop to Windows 11. I work remotely and cannot access any internal systems.",
+    "expected_priority": "P2",
+    "expected_category": "vpn",
+    "expected_team": "network",
+    "expected_action": "route",
+    "expected_escalate": false
+  },
+  {
+    "id": "NRM-004",
+    "user_id": "emp_10003",
+    "input": "Our entire floor cannot connect to the internet or internal network. About 40 people affected. Started 30 minutes ago.",
+    "expected_priority": "P1",
+    "expected_category": "network_outage",
+    "expected_team": "network",
+    "expected_action": "escalate",
+    "expected_escalate": true
+  },
+  {
+    "id": "NRM-005",
+    "user_id": "emp_10004",
+    "input": "I received a suspicious email asking me to click a link and enter my Microsoft credentials. I did not click anything but I want to report it.",
+    "expected_priority": "P2",
+    "expected_category": "phishing",
+    "expected_team": "security",
+    "expected_action": "escalate",
+    "expected_escalate": true
+  },
+  {
+    "id": "NRM-006",
+    "user_id": "emp_10001",
+    "input": "My keyboard spacebar stopped working. I am using copy-paste for spaces right now but it is very slow.",
+    "expected_priority": "P3",
+    "expected_category": "peripheral",
+    "expected_team": "desktop",
+    "expected_action": "route",
+    "expected_escalate": false
+  },
+  {
+    "id": "NRM-007",
+    "user_id": "emp_10002",
+    "input": "I need access to the Marketing SharePoint site. My manager has approved it — her name is Jane Smith.",
+    "expected_priority": "P3",
+    "expected_category": "access_request",
+    "expected_team": "iam",
+    "expected_action": "route",
+    "expected_escalate": false
+  },
+  {
+    "id": "NRM-008",
+    "user_id": "emp_10003",
+    "input": "Microsoft Teams microphone is not working during calls. Camera is fine but no one can hear me.",
+    "expected_priority": "P3",
+    "expected_category": "teams",
+    "expected_team": "email",
+    "expected_action": "route",
+    "expected_escalate": false
+  },
+  {
+    "id": "NRM-009",
+    "user_id": "emp_10004",
+    "input": "My work phone's authenticator app is showing incorrect codes and MFA is failing for everything. I cannot log in to any work systems.",
+    "expected_priority": "P2",
+    "expected_category": "mfa",
+    "expected_team": "iam",
+    "expected_action": "route",
+    "expected_escalate": false
+  },
+  {
+    "id": "NRM-010",
+    "user_id": "emp_10001",
+    "input": "All email has stopped working company-wide. Nobody in the office can send or receive emails. Exchange server issue suspected.",
+    "expected_priority": "P1",
+    "expected_category": "email",
+    "expected_team": "email",
+    "expected_action": "escalate",
+    "expected_escalate": true
+  },
+  {
+    "id": "NRM-011",
+    "user_id": "emp_10002",
+    "input": "I need Adobe Acrobat Pro installed. I use it for signing contracts.",
+    "expected_priority": "P4",
+    "expected_category": "software_install",
+    "expected_team": "desktop",
+    "expected_action": "route",
+    "expected_escalate": false
+  },
+  {
+    "id": "NRM-012",
+    "user_id": "emp_10003",
+    "input": "My laptop screen has a large crack across the bottom third. It happened in a bag. I can still see part of the screen.",
+    "expected_priority": "P2",
+    "expected_category": "hardware",
+    "expected_team": "desktop",
+    "expected_action": "route",
+    "expected_escalate": false
+  },
+  {
+    "id": "NRM-013",
+    "user_id": "emp_10004",
+    "input": "I want to request a second monitor for my home office setup.",
+    "expected_priority": "P4",
+    "expected_category": "hardware",
+    "expected_team": "desktop",
+    "expected_action": "route",
+    "expected_escalate": false
+  },
+  {
+    "id": "NRM-014",
+    "user_id": "emp_10001",
+    "input": "I accidentally deleted a folder with 3 years of project files from the shared drive. Is there a backup?",
+    "expected_priority": "P1",
+    "expected_category": "data_loss",
+    "expected_team": "data",
+    "expected_action": "escalate",
+    "expected_escalate": true
+  },
+  {
+    "id": "NRM-015",
+    "user_id": "emp_10002",
+    "input": "Printer on the 4th floor keeps jamming and printing garbled characters.",
+    "expected_priority": "P3",
+    "expected_category": "peripheral",
+    "expected_team": "desktop",
+    "expected_action": "route",
+    "expected_escalate": false
+  },
+  {
+    "id": "NRM-016",
+    "user_id": "emp_10003",
+    "input": "I just started at the company today and have not been given any access. I cannot log in to anything.",
+    "expected_priority": "P2",
+    "expected_category": "account_locked",
+    "expected_team": "iam",
+    "expected_action": "route",
+    "expected_escalate": false
+  },
+  {
+    "id": "NRM-017",
+    "user_id": "emp_10004",
+    "input": "My laptop is overheating and shutting down randomly. The fan sounds very loud.",
+    "expected_priority": "P2",
+    "expected_category": "hardware",
+    "expected_team": "desktop",
+    "expected_action": "route",
+    "expected_escalate": false
+  },
+  {
+    "id": "NRM-018",
+    "user_id": "emp_10001",
+    "input": "Can someone reset my VPN password? I know how to use VPN but the credentials expired.",
+    "expected_priority": "P3",
+    "expected_category": "password_reset",
+    "expected_team": "iam",
+    "expected_action": "auto_resolve",
+    "expected_escalate": false
+  },
+  {
+    "id": "NRM-019",
+    "user_id": "emp_10002",
+    "input": "My Outlook calendar is not syncing with Teams. Meetings show in Outlook but not in Teams and vice versa.",
+    "expected_priority": "P3",
+    "expected_category": "calendar",
+    "expected_team": "email",
+    "expected_action": "route",
+    "expected_escalate": false
+  },
+  {
+    "id": "NRM-020",
+    "user_id": "emp_10003",
+    "input": "I need to be added to the distribution list for the Finance monthly newsletter.",
+    "expected_priority": "P4",
+    "expected_category": "access_request",
+    "expected_team": "iam",
+    "expected_action": "route",
+    "expected_escalate": false
+  }
+]

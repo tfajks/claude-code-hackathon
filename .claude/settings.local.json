@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python *)",
+      "Bash(py --version)",
+      "Bash(where python3 *)",
+      "Bash(where py *)",
+      "Bash(py main.py --eval --suite adversarial)",
+      "PowerShell($env:ANTHROPIC_API_KEY)",
+      "Bash(py -m pip install -q \"anthropic[bedrock]\" \"botocore[crt]\" boto3)",
+      "Bash(py -m pip install -q boto3)",
+      "Bash(gh auth *)",
+      "Bash(find .claude -type f)",
+      "Bash(dir /s /b .claude)",
+      "Bash(gh repo *)",
+      "Bash(git remote *)",
+      "Bash(git add *)"
+    ]
+  }
+}

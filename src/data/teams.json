@@ -1,0 +1,66 @@
+[
+  {
+    "id": "desktop",
+    "name": "Desktop Support",
+    "queue": "desktop-support",
+    "categories": ["hardware", "software_install", "os_issue", "peripheral"],
+    "sla_hours": {"P1": 1, "P2": 4, "P3": 24, "P4": 72},
+    "oncall": "desktop-oncall@company.com"
+  },
+  {
+    "id": "network",
+    "name": "Network & Connectivity",
+    "queue": "network-ops",
+    "categories": ["vpn", "wifi", "network_outage", "firewall", "connectivity"],
+    "sla_hours": {"P1": 1, "P2": 2, "P3": 8, "P4": 48},
+    "oncall": "network-oncall@company.com"
+  },
+  {
+    "id": "security",
+    "name": "Security Operations",
+    "queue": "security-ops",
+    "categories": ["security_breach", "phishing", "malware", "suspicious_activity", "account_compromise", "ransomware"],
+    "sla_hours": {"P1": 0.5, "P2": 1, "P3": 4, "P4": 24},
+    "oncall": "soc@company.com"
+  },
+  {
+    "id": "iam",
+    "name": "Identity & Access Management",
+    "queue": "iam-support",
+    "categories": ["access_request", "password_reset", "mfa", "account_locked", "permission_change"],
+    "sla_hours": {"P1": 1, "P2": 4, "P3": 8, "P4": 48},
+    "oncall": "iam-oncall@company.com"
+  },
+  {
+    "id": "email",
+    "name": "Email & Collaboration",
+    "queue": "email-support",
+    "categories": ["email", "calendar", "teams", "sharepoint", "collaboration"],
+    "sla_hours": {"P1": 1, "P2": 4, "P3": 24, "P4": 72},
+    "oncall": "email-support@company.com"
+  },
+  {
+    "id": "data",
+    "name": "Data & Storage",
+    "queue": "data-ops",
+    "categories": ["data_loss", "backup", "storage", "database"],
+    "sla_hours": {"P1": 0.5, "P2": 2, "P3": 8, "P4": 48},
+    "oncall": "data-oncall@company.com"
+  },
+  {
+    "id": "exec",
+    "name": "Executive Support",
+    "queue": "exec-support",
+    "categories": ["executive_request"],
+    "sla_hours": {"P1": 0.5, "P2": 1, "P3": 2, "P4": 8},
+    "oncall": "exec-support@company.com"
+  },
+  {
+    "id": "tier2",
+    "name": "Tier 2 Engineering",
+    "queue": "tier2-escalation",
+    "categories": ["complex_issue", "server", "infrastructure"],
+    "sla_hours": {"P1": 1, "P2": 2, "P3": 8, "P4": 48},
+    "oncall": "tier2-oncall@company.com"
+  }
+]

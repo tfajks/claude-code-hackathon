@@ -1,0 +1,82 @@
+[
+  {
+    "id": "KB-001",
+    "title": "Self-Service Password Reset (SSPR)",
+    "categories": ["password_reset", "account_locked"],
+    "keywords": ["password", "reset", "forgot", "locked", "expired", "sspr"],
+    "resolution_steps": "1. Go to aka.ms/sspr\n2. Enter your work email\n3. Verify identity via MFA (phone or authenticator app)\n4. Set a new password (min 12 chars, upper+lower+number+symbol)\n5. Sign in with new password and re-register MFA if prompted",
+    "auto_resolvable": true,
+    "resolution_action": "send_sspr_link",
+    "notes": "Works for most account lockouts. If MFA device is lost, user must come to IT desk with ID."
+  },
+  {
+    "id": "KB-002",
+    "title": "VPN Client Installation & Configuration",
+    "categories": ["vpn", "connectivity"],
+    "keywords": ["vpn", "global protect", "remote access", "connect from home", "tunnel"],
+    "resolution_steps": "1. Go to vpn.company.com\n2. Download the GlobalProtect client for your OS\n3. Install and enter gateway: vpn.company.com\n4. Log in with your AD credentials + MFA\n5. Test connection by accessing an internal resource",
+    "auto_resolvable": true,
+    "resolution_action": "install_vpn_client",
+    "notes": "Requires corporate device enrollment. BYOD not supported."
+  },
+  {
+    "id": "KB-003",
+    "title": "Microsoft Teams Audio/Video Troubleshooting",
+    "categories": ["teams", "collaboration"],
+    "keywords": ["teams", "audio", "video", "microphone", "camera", "meeting", "call", "crash"],
+    "resolution_steps": "1. Close Teams completely (check system tray)\n2. Clear Teams cache: %appdata%\\Microsoft\\Teams — delete Cache, blob_storage, databases, Local Storage\n3. Restart Teams\n4. Check audio device settings: Teams > Settings > Devices\n5. If issue persists, run Teams Meeting Test: aka.ms/TeamsMeetingTest",
+    "auto_resolvable": false,
+    "resolution_action": null,
+    "notes": "Cache clear resolves ~70% of Teams audio/video issues."
+  },
+  {
+    "id": "KB-004",
+    "title": "Laptop Won't Power On",
+    "categories": ["hardware"],
+    "keywords": ["power", "won't turn on", "dead", "black screen", "no power", "battery"],
+    "resolution_steps": "1. Verify charger is connected and charging LED is on\n2. Hold power button 30 seconds (hard reset)\n3. Remove battery (if possible), wait 60s, reinsert\n4. Try known-good charger\n5. If still unresponsive: hardware fault, needs depot repair",
+    "auto_resolvable": false,
+    "resolution_action": null,
+    "notes": "If laptop is under 1 year old, typically covered under warranty."
+  },
+  {
+    "id": "KB-005",
+    "title": "Salesforce / CRM Access Issues",
+    "categories": ["access_request", "software_install"],
+    "keywords": ["salesforce", "crm", "login", "access denied", "permission", "license"],
+    "resolution_steps": "1. Verify you have a Salesforce license assigned (check with your manager)\n2. If licensed: try Incognito/Private mode\n3. Clear browser cache and cookies for salesforce.com\n4. If access denied error: submit access request to IAM team with manager approval\n5. Manager must approve via ServiceNow > Access Management",
+    "auto_resolvable": false,
+    "resolution_action": null,
+    "notes": "License assignment takes up to 1 business day after manager approval."
+  },
+  {
+    "id": "KB-006",
+    "title": "Phishing Email Reporting Procedure",
+    "categories": ["phishing", "security_breach"],
+    "keywords": ["phishing", "suspicious email", "scam", "spam", "malicious link", "fraud"],
+    "resolution_steps": "1. Do NOT click any links in the suspicious email\n2. Use the 'Report Phishing' button in Outlook (red fish icon)\n3. Forward to phishing@company.com\n4. If you already clicked a link: IMMEDIATELY call SOC hotline: ext. 9911\n5. Change your password immediately if you entered credentials",
+    "auto_resolvable": false,
+    "resolution_action": null,
+    "notes": "Any clicked phishing links are treated as P1 security incidents."
+  },
+  {
+    "id": "KB-007",
+    "title": "Adobe Creative Suite / Licensed Software Provisioning",
+    "categories": ["software_install", "access_request"],
+    "keywords": ["adobe", "photoshop", "illustrator", "acrobat", "license", "software", "install"],
+    "resolution_steps": "1. Check if software is in the pre-approved catalog: software.company.com\n2. For pre-approved software: Submit request via Self-Service Portal > Software\n3. For non-catalog software: requires manager + finance approval\n4. Provisioning takes 2-4 hours after approval",
+    "auto_resolvable": true,
+    "resolution_action": "provision_approved_software",
+    "notes": "Only catalog software can be auto-provisioned. Custom software requires manual review."
+  },
+  {
+    "id": "KB-008",
+    "title": "Multi-Factor Authentication (MFA) Setup",
+    "categories": ["mfa", "account_locked"],
+    "keywords": ["mfa", "authenticator", "2fa", "two factor", "phone", "verification code"],
+    "resolution_steps": "1. Install Microsoft Authenticator on your mobile device\n2. Go to aka.ms/mfasetup while on corporate network\n3. Follow setup wizard to register your device\n4. Test with a sign-in prompt\n5. Register a backup phone number as secondary method",
+    "auto_resolvable": false,
+    "resolution_action": null,
+    "notes": "MFA device changes require identity verification in-person at IT desk."
+  }
+]
