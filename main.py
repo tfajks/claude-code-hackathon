@@ -17,13 +17,14 @@ import sys
 
 
 def _check_env():
-    import boto3
+    import boto3, os
+    profile = os.environ.get("AWS_PROFILE", "bootcamp")
     try:
-        boto3.client("sts", region_name="us-west-2").get_caller_identity()
+        session = boto3.Session(profile_name=profile, region_name="us-west-2")
+        session.client("sts").get_caller_identity()
     except Exception as e:
         print(f"Error: No valid AWS credentials found: {e}")
         print("Run: aws login --profile bootcamp --region us-east-1")
-        print("Then: set AWS_PROFILE=bootcamp")
         sys.exit(1)
 
 

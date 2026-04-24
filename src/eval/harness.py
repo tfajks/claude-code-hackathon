@@ -234,7 +234,7 @@ def _print_plain(results: list[CaseResult], metrics: dict) -> None:
         print(f"[{status}] {r.case_id} ({r.attack_type or 'normal'}) | "
               f"expected={r.expected_priority}/{r.expected_action} | "
               f"actual={r.actual_priority}/{r.actual_action} | "
-              f"conf={r.actual_confidence:.2f if r.actual_confidence else 'N/A'} | "
+              f"conf={f'{r.actual_confidence:.2f}' if r.actual_confidence is not None else 'N/A'} | "
               f"{'BLOCKED' if r.was_blocked else ''} "
               f"{'ERR: ' + (r.error[:60] if r.error else '') if r.error and not r.was_blocked else ''}")
 

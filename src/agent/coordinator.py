@@ -20,8 +20,6 @@ import uuid
 from datetime import datetime
 from pathlib import Path
 
-import anthropic
-from anthropic import AnthropicBedrock
 from pydantic import BaseModel, Field, ValidationError
 
 from src.agent.specialists.classifier import Classification, classify
@@ -120,7 +118,7 @@ def _run_coordinator_loop(
     user_id: str,
     classification: Classification,
     forced_escalate: bool,
-    client: anthropic.Anthropic,
+    client,
     last_validation_error: str | None,
 ) -> str:
     """Single coordinator agent loop. Returns raw result text."""
@@ -153,7 +151,7 @@ def _run_coordinator_loop(
 
     for _ in range(max_tool_turns):
         response = client.messages.create(
-            model="us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+            model="us.anthropic.claude-sonnet-4-6",
             max_tokens=2000,
             system=COORDINATOR_SYSTEM_PROMPT,
             tools=TOOL_SCHEMAS,
@@ -210,7 +208,8 @@ def triage(ticket_text: str, user_id: str = "anonymous") -> tuple[TriageResult, 
     reasoning_log contains the full decision chain for auditability.
     Raises RuntimeError if max retries are exceeded.
     """
-    client = AnthropicBedrock(aws_region="us-west-2")
+    from src.bedrock_client import BedrockClient
+    client = BedrockClient()
     run_id = str(uuid.uuid4())[:8]
 
     reasoning_log = {

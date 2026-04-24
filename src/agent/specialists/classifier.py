@@ -9,8 +9,6 @@ Uses claude-haiku-4-5 for speed/cost; classification does not require deep reaso
 import json
 import os
 
-import anthropic
-from anthropic import AnthropicBedrock
 from pydantic import BaseModel, Field, field_validator
 
 from src.agent.tools import TOOL_DISPATCH, lookup_kb, get_user_history
@@ -122,7 +120,7 @@ class Classification(BaseModel):
         return v
 
 
-def classify(ticket_text: str, user_id: str, client: anthropic.Anthropic) -> Classification:
+def classify(ticket_text: str, user_id: str, client) -> Classification:
     """
     Run the classifier specialist.
 
@@ -143,7 +141,7 @@ def classify(ticket_text: str, user_id: str, client: anthropic.Anthropic) -> Cla
     max_tool_turns = 3
     for _ in range(max_tool_turns):
         response = client.messages.create(
-            model="us.anthropic.claude-haiku-4-5-20251001-v1:0",
+            model="us.anthropic.claude-sonnet-4-6",
             max_tokens=1000,
             system=SYSTEM_PROMPT,
             tools=CLASSIFIER_TOOLS,
@@ -154,6 +152,10 @@ def classify(ticket_text: str, user_id: str, client: anthropic.Anthropic) -> Cla
             text = next(
                 (b.text for b in response.content if hasattr(b, "text")), ""
             )
+            import re as _re
+            json_match = _re.search(r"\{[\s\S]*\}", text)
+            if json_match:
+                text = json_match.group()
             return Classification.model_validate_json(text.strip())
 
         if response.stop_reason == "tool_use":
